@@ -5,7 +5,14 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { ButtonType } from "./components/cb-button/cb-button";
+export { ButtonType } from "./components/cb-button/cb-button";
 export namespace Components {
+    interface CbButton {
+        "prefixIcon": string;
+        "suffixIcon": string;
+        "type": ButtonType;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -22,6 +29,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLCbButtonElement extends Components.CbButton, HTMLStencilElement {
+    }
+    var HTMLCbButtonElement: {
+        prototype: HTMLCbButtonElement;
+        new (): HTMLCbButtonElement;
+    };
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
     }
     var HTMLMyComponentElement: {
@@ -29,10 +42,16 @@ declare global {
         new (): HTMLMyComponentElement;
     };
     interface HTMLElementTagNameMap {
+        "cb-button": HTMLCbButtonElement;
         "my-component": HTMLMyComponentElement;
     }
 }
 declare namespace LocalJSX {
+    interface CbButton {
+        "prefixIcon"?: string;
+        "suffixIcon"?: string;
+        "type"?: ButtonType;
+    }
     interface MyComponent {
         /**
           * The first name
@@ -48,6 +67,7 @@ declare namespace LocalJSX {
         "middle"?: string;
     }
     interface IntrinsicElements {
+        "cb-button": CbButton;
         "my-component": MyComponent;
     }
 }
@@ -55,6 +75,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "cb-button": LocalJSX.CbButton & JSXBase.HTMLAttributes<HTMLCbButtonElement>;
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
         }
     }

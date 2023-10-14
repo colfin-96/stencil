@@ -1,0 +1,79 @@
+:host {
+  display: block;
+}
+
+button {
+  font-size: 14px;
+  line-height: 20px;
+  padding: 8px 16px;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-radius: 4px;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.filled {
+  background-color: #0082bb;
+  box-shadow: 0 1px 5px 0 rgba(9, 9, 9, 0.12), 0 2px 2px 0 rgba(9, 9, 9, 0.14), 0 3px 1px -2px rgba(9, 9, 9, 0.2);
+  color: #fff;
+
+  border: none;
+
+  &:hover {
+    background-color: #006ba1;
+  }
+
+  &:focus {
+    outline: dotted 2px #fff;
+    box-shadow: 0 0 0 2px #0082bb;
+  }
+
+  &:active {
+    background-color: #00587f;
+  }
+}
+
+.flat {
+  background-color: white;
+  color: #0082bb;
+  padding: 8px;
+  border: none;
+
+  &:hover {
+    background-color: rgba(0, 130, 187, 0.08);
+  }
+
+  &:focus {
+    outline: dotted 2px #0082bb;
+    box-shadow: 0 0 0 2px #fff;
+  }
+
+  &:active {
+    background-color: rgba(0, 130, 187, 0.16);
+  }
+}
+
+.outline {
+  background-color: white;
+  color: #0082bb;
+  padding: 8px 16px;
+  border: 1px solid #e0e0e0;
+
+  &:hover {
+    background-color: rgba(0, 130, 187, 0.08);
+    border: 1px solid #0082bb;
+  }
+
+  &:focus {
+    outline: dotted 2px #0082bb;
+    box-shadow: 0 0 0 2px #fff;
+  }
+
+  &:active {
+    background-color: rgba(0, 130, 187, 0.16);
+    border: 1px solid #0082bb;
+  }
+}
